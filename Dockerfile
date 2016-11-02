@@ -10,7 +10,8 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 	apt-get -y install vim curl nodejs git && \
 	mkdir -p /var/www/iiif-manifest-editor && \
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash && \
-	sh /root/.nvm/nvm.sh && \
+	export NVM_DIR="/root/.nvm" && \
+	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && \
 	git clone https://github.com/bodleian/iiif-manifest-editor.git /var/www/iiif-manifest-editor && \
 	cd /var/www/iiif-manifest-editor && \
 	nvm install v6.1.0 && \
