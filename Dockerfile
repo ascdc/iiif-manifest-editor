@@ -7,7 +7,7 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 	chmod +x /*.sh && \
 	apt-get update && \
 	apt-get -y dist-upgrade && \
-	apt-get -y install vim curl nodejs git && \
+	apt-get -y install vim curl git && \
 	mkdir -p /var/www/iiif-manifest-editor && \
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash && \
 	export NVM_DIR="/root/.nvm" && \
